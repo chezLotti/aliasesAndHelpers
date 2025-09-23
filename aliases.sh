@@ -44,3 +44,11 @@ function dexec {
 	sudo docker exec -it \$1 \$2
 }
 EOF
+
+[ "$(grep -q 'function dexecr' $aliasFile; echo $?)" -eq 1 ] &&
+cat >> $aliasFile <<EOF
+
+function dexecr {
+	sudo docker exec -u 0 -it \$1 \$2
+}
+EOF
