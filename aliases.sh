@@ -6,9 +6,9 @@ aliasFile=~/.bash_aliases;
 
 [ "$(grep -q 'alias la' $aliasFile; echo $?)" -eq 1 ] && echo "alias la='ls -la'" >> $aliasFile;
 
-[ "$(grep -q 'alias ips' $aliasFile; echo $?)" -eq 1 ] && echo "alias ips='ip address | grep \"inet\\s\"'" >> $aliasFile;
+[ "$(grep -q 'alias ips' $aliasFile; echo $?)" -eq 1 ] && echo "alias ips='ip -4 a s | grep inet'" >> $aliasFile;
 
-[ "$(grep -q 'alias ipsv6' $aliasFile; echo $?)" -eq 1 ] && echo "alias ipsv6='ip address | grep inet6'" >> $aliasFile;
+[ "$(grep -q 'alias ipsv6' $aliasFile; echo $?)" -eq 1 ] && echo "alias ipsv6='ip -6 a s | grep inet'" >> $aliasFile;
 
 ### docker
 [ "$(grep -q 'alias dstats' $aliasFile; echo $?)" -eq 1 ] && echo "alias dstats='sudo docker stats'" >> $aliasFile;
